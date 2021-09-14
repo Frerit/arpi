@@ -19,7 +19,7 @@ class _ProjectViewState extends State<ProjectView> {
           children: [
             Container(
               padding: EdgeInsets.only(top: 20),
-              child: Image.asset('assets/logo_home.png',
+              child: Image.asset('assets/icon.png',
                 width: 50, height: 50,),
             ),
 
@@ -65,7 +65,7 @@ class _ProjectViewState extends State<ProjectView> {
 
             SizedBox(height: 50,),
 
-            Container(
+           /* Container(
               height: 250,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -79,7 +79,7 @@ class _ProjectViewState extends State<ProjectView> {
                 ),
                 child: Image.asset('assets/arpitipi.png'),
               ),
-            )
+            )*/
           ],
         ),
       ),

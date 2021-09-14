@@ -24,7 +24,7 @@ class ArpisView extends StatelessWidget{
               Container(
                 width: Get.width,
                 child:
-                Image.asset('assets/home_arpi.png', fit: BoxFit.cover,),
+                Image.asset('assets/home_arpis.png', fit: BoxFit.cover,),
               ),
 
               Container(
@@ -60,19 +60,26 @@ class ArpisView extends StatelessWidget{
                     children: [
                       Container(
                         width: Get.width,
-                        child: Image.asset('assets/arpitipi.png',
+                        child: Image.asset('assets/proyect1.jpg',
                           fit: BoxFit.cover,),
                       ),
                       SizedBox(height: 10,),
                       Container(
                         width: Get.width * 0.9,
                         color: Colors.white54,
-                        child: LinearProgressIndicator(
-                          minHeight: 10,
-                          backgroundColor: Colors.grey,
-                          valueColor: AlwaysStoppedAnimation(Colors.amber),
-                          value: 0.7,
-                        ),
+                        child: Container(
+                            width: Get.width * 0.9,
+                            height: 10,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              child: LinearProgressIndicator(
+                                minHeight: 10,
+                                backgroundColor: Colors.grey,
+                                valueColor: AlwaysStoppedAnimation(Colors.amber),
+                                value: 0.7,
+                              ),
+                            ),
+                          )
                       ),
                       SizedBox(height: 5,),
                       Row(
@@ -87,17 +94,17 @@ class ArpisView extends StatelessWidget{
                                         TextSpan(text: "4.723.000/",
                                           style: TextStyle(color: Colors.black,
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 18),
+                                              fontSize: 16),
                                         ),
-                                        TextSpan(text: " Acción/m2",
+                                        TextSpan(text: " Acción/m2 ",
                                           style: TextStyle(color: Colors.black,
                                               fontWeight: FontWeight.w300,
-                                              fontSize: 15),
+                                              fontSize: 12),
                                         ),
-                                        TextSpan(text: "3429 Acciones/3429m2",
+                                        TextSpan(text: " 3429 Acciones/3429m2",
                                           style: TextStyle(color: Colors.black,
                                               fontWeight: FontWeight.w300,
-                                              fontSize: 15),
+                                              fontSize: 12),
                                         ),
                                       ]
                                   )
