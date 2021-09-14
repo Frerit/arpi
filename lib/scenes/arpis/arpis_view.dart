@@ -147,7 +147,12 @@ class ArpisView extends StatelessWidget{
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 RichText(text: TextSpan(
-                                    text: "CSS- Central de Servicios Sur"
+                                    text: "CSS- Central de Servicios Sur",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                    )
                                 ),
                                 )
                               ],
