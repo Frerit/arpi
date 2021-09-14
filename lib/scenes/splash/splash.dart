@@ -1,7 +1,8 @@
+import 'package:arpi/controllers/splash_controllers.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget{
-  SplashController controller = SplasController.to;
+  SplashController controller = SplashController.to;
   
   @override
   Widget build(BuildContext context) {
