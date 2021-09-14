@@ -37,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
           backgroundColor: Colors.black87,
           style: TabStyle.react,
           items: [
-            TabItem(icon: Image.asset("assets/ARPIS PEQ.png")),
+            TabItem(icon: Image.asset("assets/arpis_peq.png")),
             TabItem(icon: Icons.business, title: "ARPIS"),
             TabItem(icon: Icons.account_circle, title: "Iniciar Sesión"),
             TabItem(icon: Icons.info, title: "¿Qué es?"),
