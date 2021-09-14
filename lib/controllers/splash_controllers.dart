@@ -8,8 +8,6 @@ class SplashController extends GetxController{
 
   @override
   void onReady() {
-    Timer(Duration(seconds: 5), (){
-      Get.to(HomeView());
-    });
+    Timer(Duration(seconds: 5), () => Get.to(HomeView()));
   }
 }
