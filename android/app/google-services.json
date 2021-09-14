@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "867594472482",
+    "project_id": "arpi-65fcf",
+    "storage_bucket": "arpi-65fcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867594472482:android:880479fca6ac22c419ce7b",
+        "android_client_info": {
+          "package_name": "co.com.tipi.arpi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "867594472482-40aj68cein0c9s17gc703s3m0fc1l033.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLkS-xGM78rkczaPrL92r-ioymLuJJhMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "867594472482-40aj68cein0c9s17gc703s3m0fc1l033.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "867594472482-112lc718n1tg0v8oik45comk75q35ueu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.com.tipi.arpi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
