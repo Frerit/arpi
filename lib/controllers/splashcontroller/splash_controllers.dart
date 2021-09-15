@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:arpi/scenes/home_view.dart';
+import 'package:arpi/scenes/home/home_view.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController{

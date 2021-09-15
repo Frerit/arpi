@@ -1,8 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'arpis/arpis_view.dart';
-import 'projects/projects_views.dart';
+import '../arpis/arpis_view.dart';
+import '../projects/projects_views.dart';
 
 class HomeView extends StatefulWidget {
   @override
