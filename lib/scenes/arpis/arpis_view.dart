@@ -29,7 +29,7 @@ class ArpisView extends StatelessWidget{
 
               Container(
                 height: 50,
-                color: Colors.white54,
+                color: Colors.white70,
                 padding: EdgeInsets.only(left: 5),
                 child: Row(
                   children: [
@@ -66,7 +66,7 @@ class ArpisView extends StatelessWidget{
                       SizedBox(height: 10,),
                       Container(
                         width: Get.width * 0.9,
-                        color: Colors.white54,
+                        color: Colors.white70,
                         child: Container(
                             width: Get.width * 0.9,
                             height: 10,
@@ -119,7 +119,7 @@ class ArpisView extends StatelessWidget{
                                           fontWeight: FontWeight.bold,
                                           fontSize: 16),
                                     ),
-                                    TextSpan(text: "Accionee disponibles",
+                                    TextSpan(text: "Acciones disponibles",
                                       style: TextStyle(color: Colors.black,
                                           fontWeight: FontWeight.w300,
                                           fontSize: 15),
@@ -147,13 +147,19 @@ class ArpisView extends StatelessWidget{
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 RichText(text: TextSpan(
-                                    text: "CSS- Central de Servicios Sur",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                    )
-                                ),
+                                    children: [
+                                      TextSpan(text: "CSS- Central de Servicios Sur -  ",
+                                        style: TextStyle(color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
+                                      ),
+                                      TextSpan(text: "La Estrella",
+                                        style: TextStyle(color: Colors.black,
+                                            fontWeight: FontWeight.w300,
+                                            fontSize: 15),
+                                      ),
+                                    ]
+                                )
                                 )
                               ],
                             ),
@@ -165,7 +171,7 @@ class ArpisView extends StatelessWidget{
                     Container(
                         child: ElevatedButton(
                             style: raisedButtonStyle,
-                            onPressed: () { },
+                            onPressed: () {},
                             child: Text("QUIERO INVERTIR",
                               style: TextStyle(color: Colors.amber,
                                   fontWeight: FontWeight.w700,

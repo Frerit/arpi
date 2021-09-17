@@ -1,3 +1,5 @@
+import 'package:arpi/scenes/que_es/what_is_view.dart';
+import 'package:arpi/scenes/sign_in/signin_view.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +19,9 @@ page(items) {
     case 1:
       return ArpisView();
     case 2:
-      return ArpisView();
+      return SigninView();
     case 3:
-      return ArpisView();
+      return WhatisView();
     default:
       return ArpisView();
   }

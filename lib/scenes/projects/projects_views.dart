@@ -39,28 +39,138 @@ class _ProjectViewState extends State<ProjectView> {
               ],
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 8,),
           Container(
               decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
                   children: [
-                    TextField(decoration: InputDecoration(
-                      icon: Icon(Icons.search),
+                    TextField(cursorColor: Colors.grey,
+                        decoration: InputDecoration(
+                        icon: Icon(Icons.search,
+                        color: Colors.grey,size: 35,),
+                        border: InputBorder.none,
                       )
                     ),
                   ]
               )
           ),
-              SizedBox(height: 10,),
-              Container(
-                child: Column(
-                    children: <Widget>[
-
-                    ]
-                ),
+              SizedBox(height: 5,),
+              Flexible(
+                child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: StreamBuilder(
+                  stream: FirebaseFirestore.instance
+                      .collection("fl_content")
+                      .snapshots(),
+                  builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    print(snapshot);
+                      if(snapshot.connectionState == ConnectionState.active) {
+                        return ListView.builder(
+                            itemCount: snapshot.data.docs.length,
+                            itemBuilder: (context, index) {
+                          return Container(
+                            padding: EdgeInsets.all(5),
+                            child: Column(
+                              children: [
+                                Container(
+                                    decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(15),
+                                    bottomRight: Radius.circular(15)
+                                  )
+                                  ),
+                                  child: Column(
+                                      children: [
+                                    Container(
+                                      width: Get.width,
+                                      child: Image.asset('assets/proyect1.jpg',
+                                      fit: BoxFit.cover,),
+                                    ),
+                                    SizedBox(height: 10,),
+                                    Container(
+                                      width: Get.width * 0.8,
+                                      color: Colors.white54,
+                                      child: Container(
+                                        width: Get.width * 0.8,
+                                        height: 10,
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                                          child: LinearProgressIndicator(
+                                            minHeight: 10,
+                                            backgroundColor: Colors.grey,
+                                            valueColor: AlwaysStoppedAnimation(Colors.amber),
+                                            value: 0.7,
+                                          ),
+                                        ),
+                                      )
+                                  ),
+                                    SizedBox(height: 5,),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.only(left: 15),
+                                          width: Get.width / 2,
+                                          height: Get.height * 0.08,
+                                          child: RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(text: "4.723.000/",
+                                                style: TextStyle(color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16),
+                                                ),
+                                                TextSpan(text: " Acción/m2 ",
+                                                  style: TextStyle(color: Colors.black,
+                                                  fontWeight: FontWeight.w300,
+                                                  fontSize: 11.5),
+                                                ),
+                                                TextSpan(text: " 3429 Acciones/3429m2",
+                                                style: TextStyle(color: Colors.black,
+                                                fontWeight: FontWeight.w300,
+                                                fontSize: 11.5),
+                                                ),
+                                              ]
+                                            )
+                                          )
+                                        ),
+                                      Container(
+                                          padding: EdgeInsets.only(left: 15),
+                                        width: Get.width / 3,
+                                          child: RichText(text: TextSpan(
+                                            children: [
+                                              TextSpan(text: "1028",
+                                              style: TextStyle(color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                              ),
+                                              TextSpan(text: "Acciones disponibles",
+                                              style: TextStyle(color: Colors.black,
+                                              fontWeight: FontWeight.w300,
+                                              fontSize: 14),
+                                              ),
+                                            ]
+                                          )
+                                          )
+                                      ),
+                                    ],
+                                    )
+                                  ]
+                                ),
+                                ),SizedBox(height: 10,),
+                              ],
+                            ),
+                          );
+                        });
+                      } else {
+                        return Container();
+                      }
+                    },
+                  )
+                )
               )
         ],
       ),
