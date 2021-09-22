@@ -255,17 +255,18 @@ class _WhatisViewState extends State<WhatisView> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w200,
-                                fontSize: 15
+                                fontSize: 16
                             ))]
                       ),
                     ),
+                    SizedBox(height: 1),
                     RichText(
                       text: TextSpan(
                           children: [TextSpan(
                               text: "Correos: gerencia@zonain.com.co ",
                               style: TextStyle(color: Colors.black,
                                   fontWeight: FontWeight.w200,
-                                  fontSize: 15)
+                                  fontSize: 16)
                           )]
                       ),
                     ),
@@ -278,19 +279,20 @@ class _WhatisViewState extends State<WhatisView> {
                               TextSpan(text: "direccion@zonain.com.co ",
                                 style: TextStyle(color: Colors.black,
                                     fontWeight: FontWeight.w200,
-                                    fontSize: 15),
+                                    fontSize: 16),
                               ),
                             ]
                         )),
                       ],
                     ),
+                    SizedBox(height: 20),
                     RichText(
                         text: TextSpan(
                             children: [
                               TextSpan(text: "Página Web: www.prinza.com/arpi/ ",
                                 style: TextStyle(color: Colors.black,
                                     fontWeight: FontWeight.w200,
-                                    fontSize: 15),
+                                    fontSize: 16),
                               ),
                             ]
                         )
