@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ArpisView extends StatelessWidget{
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
@@ -85,7 +86,7 @@ class ArpisView extends StatelessWidget{
                       Row(
                         children: [
                           Container(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.only(left: 15),
                               width: Get.width / 2,
                               height: Get.height * 0.07,
                               child: RichText(
@@ -146,20 +147,28 @@ class ArpisView extends StatelessWidget{
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                RichText(text: TextSpan(
-                                    children: [
-                                      TextSpan(text: "CSS- Central de Servicios Sur -  ",
-                                        style: TextStyle(color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      TextSpan(text: "La Estrella",
-                                        style: TextStyle(color: Colors.black,
-                                            fontWeight: FontWeight.w300,
-                                            fontSize: 15),
-                                      ),
-                                    ]
-                                )
+                                Container(
+                                  width: Get.width * 0.9,
+                                  child: RichText(text: TextSpan(
+                                      children: [
+                                        TextSpan(text: "CSS- Central de Servicios            ",
+                                          style: TextStyle(color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                        TextSpan(text: " Sur - ",
+                                          style: TextStyle(color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                        TextSpan(text: " La Estrella",
+                                          style: TextStyle(color: Colors.black,
+                                              fontWeight: FontWeight.w200,
+                                              fontSize: 20),
+                                        ),
+                                      ]
+                                  )
+                                  ),
                                 )
                               ],
                             ),
@@ -171,7 +180,14 @@ class ArpisView extends StatelessWidget{
                     Container(
                         child: ElevatedButton(
                             style: raisedButtonStyle,
-                            onPressed: () {},
+                            onPressed: () async {
+                              final url = "https://docs.google.com/forms/d/e/1FAIpQLSfjrLVv87drMtdsyqYHp3QKICsprK-ox5qa0ndF1U3OqJG6Iw/viewform";
+                              if (await canLaunch(url)) {
+                              await launch(url);
+                              } else {
+                              throw 'Could not launch $url';
+                              }
+                            },
                             child: Text("QUIERO INVERTIR",
                               style: TextStyle(color: Colors.amber,
                                   fontWeight: FontWeight.w700,
