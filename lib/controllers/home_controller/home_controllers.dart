@@ -8,12 +8,6 @@ class SelectIconsChatController extends GetxController {
   final box = GetStorage();
   RxList<ListItem> iconsSelected = RxList<ListItem>();
 
-  selectIcons(ListItem item, int index) {
-    iconsSelected.add(item);
-  }
 
-  deselectIcons(ListItem item, int index) {
-    iconsSelected.remove(item);
-  }
 
 }

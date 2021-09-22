@@ -69,7 +69,8 @@ class _ProjectViewState extends State<ProjectView> {
                     builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                       print(snapshot);
                       if(snapshot.connectionState == ConnectionState.active) {
-
+                        final datos = snapshot.data.docs;
+                        print(datos);
                         return ListView.builder(
                             itemCount: snapshot.data.docs.length,
                             itemBuilder: (context, index) {
