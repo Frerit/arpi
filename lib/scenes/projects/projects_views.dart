@@ -58,7 +58,7 @@ class _ProjectViewState extends State<ProjectView> {
           ),
           Flexible(
               child: Padding(
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.only(top:5, left: 5, right: 5),
                   child: StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection("fl_content")
@@ -66,7 +66,6 @@ class _ProjectViewState extends State<ProjectView> {
                     builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                       print(snapshot);
                       if(snapshot.connectionState == ConnectionState.active) {
-                        final datos = snapshot.data.docs;
                         return ListView.builder(
                             itemCount: snapshot.data.docs.length,
                             itemBuilder: (context, index) {
@@ -117,7 +116,9 @@ class _ProjectViewState extends State<ProjectView> {
                                                   child: Text("PRÓXIMAMENTE-", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,),),
                                                 )
                                               ])
-                                                  : Row(
+                                            : Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                crossAxisAlignment : CrossAxisAlignment.start,
                                                 children: [
                                                   Container(
                                                       padding: EdgeInsets.only(left: 15),
@@ -155,10 +156,10 @@ class _ProjectViewState extends State<ProjectView> {
                                                                   fontWeight: FontWeight.bold,
                                                                   fontSize: 15),
                                                             ),
-                                                            TextSpan(text: "Acciones disponibles",
+                                                            TextSpan(text: " Acciones disponibles",
                                                               style: TextStyle(color: Colors.black,
                                                                   fontWeight: FontWeight.w300,
-                                                                  fontSize: 14),
+                                                                  fontSize: 12),
                                                             ),
                                                           ]
                                                       )
@@ -168,25 +169,30 @@ class _ProjectViewState extends State<ProjectView> {
                                               )
                                             ]
                                         ),
-                                      ), SizedBox(height: 10,),
+                                      ),
+                                      SizedBox(height: 10,),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Container(
                                             width: 5,
                                             height: 25,
                                             color: Colors.amber,
                                           ),
-
+                                          SizedBox(width: 5),
+                                          Text("${proyecto.nombreProyecto}",
+                                            style: TextStyle(color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
                                           Container(
-                                            padding: EdgeInsets.only(right: 10),
+                                            padding: EdgeInsets.only(left: 10),
                                             child: RichText(text: TextSpan(
                                                 children: [
-                                                  TextSpan(text: "${proyecto.nombreProyecto}",
-                                                    style: TextStyle(color: Colors.black,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 18),
-                                                  ),
                                                   TextSpan(text: "${proyecto.ubicacion}",
                                                     style: TextStyle(color: Colors.black,
                                                         fontWeight: FontWeight.w300,
@@ -200,7 +206,7 @@ class _ProjectViewState extends State<ProjectView> {
                                       ),
                                       SizedBox(height: 10,),
                                       Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                                        padding: EdgeInsets.symmetric(horizontal: 10),
                                         child: Container(
                                           width: Get.width * 0.92,
                                           height: 0.3,
