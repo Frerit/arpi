@@ -4,6 +4,7 @@ import 'package:arpi/models/project_models/project_models.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -142,7 +143,7 @@ class _DetailProjectViewState extends State<DetailProjectView> {
                                                                 if (snapStore.connectionState == ConnectionState.done) {
                                                                   final String urlImage = snapStore.data;
                                                                   return Container(
-                                                                    child: Image.network(urlImage, width: 100, height: 100,),
+                                                                    child: Image.network(urlImage, width: Get.width, fit: BoxFit.cover,),
                                                                   );
                                                                 } else {
                                                                   return SizedBox();
@@ -191,54 +192,60 @@ class _DetailProjectViewState extends State<DetailProjectView> {
                                               ),
                                             )
                                         ),
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15),
-                                            width: Get.width / 2,
-                                            child: RichText(
-                                                text: TextSpan(
+                                        SizedBox(height: 10,),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Container(
+                                                padding: EdgeInsets.only(left: 10),
+                                                width: Get.width / 2,
+                                                child: RichText(
+                                                    text: TextSpan(
+                                                        children: [
+                                                          TextSpan(text:"${formatCurrency.format( proyecto
+                                                              .detalleDeLaInversion.valorArpis ) }" ,
+                                                            style: TextStyle(color: Colors.black,
+                                                                fontWeight: FontWeight.bold,
+                                                                fontSize: 14),
+                                                          ),
+                                                          TextSpan(text: " Acción/m2 ",
+                                                            style: TextStyle(color: Colors.black,
+                                                                fontWeight: FontWeight.w300,
+                                                                fontSize: 11.5),
+                                                          ),
+                                                          TextSpan(text: "${proyecto
+                                                              .detalleDeLaInversion.acciones} Acciones/${proyecto
+                                                              .detalleDeLaInversion.acciones} m2",
+                                                            style: TextStyle(color: Colors.black,
+                                                                fontWeight: FontWeight.w300,
+                                                                fontSize: 11.5),
+                                                          ),
+                                                        ]
+                                                    )
+                                                )
+                                            ),
+                                            Container(
+                                                padding: EdgeInsets.only(left: 10),
+                                                width: Get.width / 3,
+                                                child: RichText(text: TextSpan(
                                                     children: [
-                                                      TextSpan(text:"${formatCurrency.format( proyecto
-                                                          .detalleDeLaInversion.valorArpis ) }" ,
+                                                      TextSpan(text: "${proyecto
+                                                          .detalleDeLaInversion.acionesDisponibles}",
                                                         style: TextStyle(color: Colors.black,
                                                             fontWeight: FontWeight.bold,
-                                                            fontSize: 16),
+                                                            fontSize: 15),
                                                       ),
-                                                      TextSpan(text: " Acción/m2 ",
+                                                      TextSpan(text: " Acciones disponibles",
                                                         style: TextStyle(color: Colors.black,
                                                             fontWeight: FontWeight.w300,
-                                                            fontSize: 11.5),
-                                                      ),
-                                                      TextSpan(text: "${proyecto
-                                                          .detalleDeLaInversion.acciones} Acciones/${proyecto
-                                                          .detalleDeLaInversion.acciones} m2",
-                                                        style: TextStyle(color: Colors.black,
-                                                            fontWeight: FontWeight.w300,
-                                                            fontSize: 11.5),
+                                                            fontSize: 12),
                                                       ),
                                                     ]
                                                 )
-                                            )
-                                        ),
-                                        Container(
-                                            padding: EdgeInsets.only(left: 15),
-                                            width: Get.width / 3,
-                                            child: RichText(text: TextSpan(
-                                                children: [
-                                                  TextSpan(text: "${proyecto
-                                                      .detalleDeLaInversion.acionesDisponibles}",
-                                                    style: TextStyle(color: Colors.black,
-                                                        fontWeight: FontWeight.bold,
-                                                        fontSize: 15),
-                                                  ),
-                                                  TextSpan(text: " Acciones disponibles",
-                                                    style: TextStyle(color: Colors.black,
-                                                        fontWeight: FontWeight.w300,
-                                                        fontSize: 12),
-                                                  ),
-                                                ]
-                                            )
-                                            )
-                                        ),
+                                                )
+                                            ),
+                                          ],
+                                        )
                                       ],
                                     ),
                                   ]

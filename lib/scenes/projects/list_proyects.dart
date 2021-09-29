@@ -216,34 +216,36 @@ class ListProyectos extends StatelessWidget {
                     ),
                   ),
                   btnInvertir
-                      ? Container(
-                      padding: EdgeInsets.only(left: 80, right: 80, top: 20),
-                      child:  ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            onPrimary: Colors.white70,
-                            primary: Colors.black,
-                            minimumSize: Size(100, 50),
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ? Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                        child:  ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              onPrimary: Colors.white70,
+                              primary: Colors.black,
+                              minimumSize: Size(100, 50),
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(25)),
+                              ),
                             ),
-                          ),
-                          onPressed: () async {
-                            final url = "https://docs.google.com/forms/d/e/1FAIpQLSfjrLVv87drMtdsyqYHp3QKICsprK-ox5qa0ndF1U3OqJG6Iw/viewform";
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          },
-                          child: Text("QUIERO INVERTIR",
-                            style: TextStyle(color: Colors.amber,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20
-                            ),
-                          )
+                            onPressed: () async {
+                              final url = proyecto.urlInversion == "https://" ? "www.arpiprinza.com" : proyecto.urlInversion;
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Text("QUIERO INVERTIR",
+                              style: TextStyle(color: Colors.amber,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 19
+                              ),
+                            )
+                        )
+                  ),
                       )
-                  )
                       : SizedBox(),
                 ],
               ),
