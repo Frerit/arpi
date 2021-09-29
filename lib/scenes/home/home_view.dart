@@ -42,7 +42,7 @@ class _HomeViewState extends State<HomeView>  with TickerProviderStateMixin {
       onWillPop: () async => showDialog(
           context: context,
           builder: (context) =>
-              AlertDialog(title: Text('¿Deseas cerar la aplicación?'), actions: <Widget>[
+              AlertDialog(title: Text('¿Deseas cerrar la aplicación?'), actions: <Widget>[
                 RaisedButton(
                     child: Text('OK'),
                     onPressed: () => Navigator.of(context).pop(true)),
