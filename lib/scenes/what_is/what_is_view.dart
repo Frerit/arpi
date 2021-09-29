@@ -31,7 +31,7 @@ class _WhatisViewState extends State<WhatisView> {
                     "de Inmuebles comerciales y otros usos.",
                 style: TextStyle(color: Colors.black,
                     fontWeight: FontWeight.w200,
-                    fontSize: 15),
+                    fontSize: 16),
               ),
             ),
             Padding(
@@ -55,7 +55,7 @@ class _WhatisViewState extends State<WhatisView> {
                         children: [TextSpan(text: "1. ",
                           style: TextStyle(color: Colors.black54,
                               fontWeight: FontWeight.w600,
-                              fontSize: 15),
+                              fontSize: 16),
                         ),
                           TextSpan(text: "La sociedad creada para administrar y operar el inmueble emite "
                               "las acciones reales de propiedad inmobiliaria ARPIs en función del número "
@@ -64,7 +64,7 @@ class _WhatisViewState extends State<WhatisView> {
                               "activo fijo que se valoriza.",
                             style: TextStyle(color: Colors.black,
                                 fontWeight: FontWeight.w200,
-                                fontSize: 15),
+                                fontSize: 16),
                           )
                         ]
                     ),
@@ -75,13 +75,13 @@ class _WhatisViewState extends State<WhatisView> {
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w200,
-                            fontSize: 15
+                            fontSize: 16
                         ),
                       ),
                       Text("1 ARPI= 1m2 ",
                         style: TextStyle(color: Colors.black54,
                             fontWeight: FontWeight.w700,
-                            fontSize: 15),
+                            fontSize: 16),
                       )
                     ],
                   ),
@@ -92,7 +92,7 @@ class _WhatisViewState extends State<WhatisView> {
                             style: TextStyle(
                                 color: Colors.black54,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 15
+                                fontSize: 16
                             )
                         ),
                           TextSpan(text: "Realizamos las rondas de inversión en el proyecto otorgando "
@@ -100,7 +100,7 @@ class _WhatisViewState extends State<WhatisView> {
                               "alquiler de los espacios",
                             style: TextStyle(color: Colors.black,
                                 fontWeight: FontWeight.w200,
-                                fontSize: 15),
+                                fontSize: 16),
                           ),
                         ]
                     ),
@@ -112,7 +112,7 @@ class _WhatisViewState extends State<WhatisView> {
                             style: TextStyle(
                                 color: Colors.black54,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 15
+                                fontSize: 16
                             )
                         ),
                           TextSpan(text: "Una vez en operación, recaudamos los valores de alquiler, pagamos "
@@ -121,7 +121,7 @@ class _WhatisViewState extends State<WhatisView> {
                               "y enviando los reportes a través de la aplicación móvil y el portal web",
                             style: TextStyle(color: Colors.black,
                                 fontWeight: FontWeight.w200,
-                                fontSize: 15),
+                                fontSize: 16),
                           )
                         ]
                     ),
@@ -141,13 +141,13 @@ class _WhatisViewState extends State<WhatisView> {
                       children: [
                         Text("ARPIS ", style: TextStyle(color: Colors.black54,
                           fontWeight: FontWeight.w700,
-                          fontSize: 15),
+                          fontSize: 16),
                       ),
                         Text("es una inversión 100% segura porque: ",
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w200,
-                              fontSize: 15),
+                              fontSize: 16),
                         )
                       ],
                     ),
@@ -155,12 +155,12 @@ class _WhatisViewState extends State<WhatisView> {
                       children: [Text("1. ", style: TextStyle(
                           color: Colors.black54,
                           fontWeight: FontWeight.w700,
-                          fontSize: 15),
+                          fontSize: 16),
                       ),
                         Text("Inviertes en propiedad raíz. ",
                           style: TextStyle(color: Colors.black,
                               fontWeight: FontWeight.w200,
-                              fontSize: 15),
+                              fontSize: 16),
                         ),],
                     ),
                     RichText(
@@ -170,12 +170,12 @@ class _WhatisViewState extends State<WhatisView> {
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 15)
+                                    fontSize: 16)
                             ),
                               TextSpan(text: "Los montos de capital son menores a los requeridos en el modelo tradicional",
                                   style: TextStyle(color: Colors.black,
                                       fontWeight: FontWeight.w200,
-                                      fontSize: 15)
+                                      fontSize: 16)
                               )
                             ]
                         )
@@ -187,13 +187,13 @@ class _WhatisViewState extends State<WhatisView> {
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 15)
+                                    fontSize: 16)
                             ),
                               TextSpan(text: "Tu acción está representada en un inmueble real que permanecerá ahí y que"
                                   "se valoriza día a día",
                                   style: TextStyle(color: Colors.black,
                                       fontWeight: FontWeight.w200,
-                                      fontSize: 15)
+                                      fontSize: 16)
                               )
                             ]
                         )
@@ -205,7 +205,7 @@ class _WhatisViewState extends State<WhatisView> {
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 15)
+                                    fontSize: 16)
                             ),
                               TextSpan(text: "Gozas del beneficio de un operador inmobiliario que siempre "
                                   "está trabajando en obtener el mejor arrendamiento de todos los espacios "
@@ -213,7 +213,7 @@ class _WhatisViewState extends State<WhatisView> {
                                   "de las ARPIs.",
                                   style: TextStyle(color: Colors.black,
                                       fontWeight: FontWeight.w200,
-                                      fontSize: 15)
+                                      fontSize: 16)
                               )
                             ]
                         )
@@ -225,12 +225,12 @@ class _WhatisViewState extends State<WhatisView> {
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 15)
+                                    fontSize: 16)
                             ),
                               TextSpan(text: "Puedes vender o transar fácilmente tus acciones.",
                                   style: TextStyle(color: Colors.black,
                                       fontWeight: FontWeight.w200,
-                                      fontSize: 15)
+                                      fontSize: 16)
                               )
                             ]
                         )
@@ -272,7 +272,7 @@ class _WhatisViewState extends State<WhatisView> {
                     ),
                     Row(
                       children: [
-                        SizedBox(width: 60),
+                        SizedBox(width: 65),
                         RichText(
                             text: TextSpan(
                             children: [

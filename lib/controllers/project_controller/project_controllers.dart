@@ -19,4 +19,11 @@ class ProjectController extends GetxController{
        return model;
      }
   }
+
+  ProjectModel convertModelFromQuery(DocumentSnapshot item) {
+    final model = ProjectModel.fromSnapshot(item);
+    if (model != null) {
+      return model;
+    }
+  }
 }

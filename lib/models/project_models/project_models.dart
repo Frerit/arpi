@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProjectModel {
@@ -16,6 +14,18 @@ class ProjectModel {
   ProjectModel({this.id, this.fFlMeta, this.descripcion, this.detalleDeLaInversion, this.ubicacion, this.urlInversion, this.order, this.nombreProyecto, this.proximamente});
 
   ProjectModel.fromJson(QueryDocumentSnapshot json) {
+    id = json['id'];
+    fFlMeta = json['_fl_meta_'] != null ? new FlMeta.fromJson(json['_fl_meta_']) : null;
+    descripcion = json['descripcion'];
+    detalleDeLaInversion = json['detalleDeLaInversion'] != null ? new DetalleDeLaInversion.fromJson(json['detalleDeLaInversion']) : null;
+    ubicacion = json['ubicacion'];
+    urlInversion = json['urlInversion'];
+    order = json['order'];
+    nombreProyecto = json['nombreProyecto'];
+    proximamente = json['proximamente'];
+  }
+
+  ProjectModel.fromSnapshot(DocumentSnapshot json) {
     id = json['id'];
     fFlMeta = json['_fl_meta_'] != null ? new FlMeta.fromJson(json['_fl_meta_']) : null;
     descripcion = json['descripcion'];
