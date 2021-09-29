@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailProjectView extends StatefulWidget {
 
@@ -143,7 +144,7 @@ class _DetailProjectViewState extends State<DetailProjectView> {
                                                                 if (snapStore.connectionState == ConnectionState.done) {
                                                                   final String urlImage = snapStore.data;
                                                                   return Container(
-                                                                    child: Image.network(urlImage, width: Get.width, fit: BoxFit.cover,),
+                                                                    child: Image.network(urlImage, width: 100, height: 100,),
                                                                   );
                                                                 } else {
                                                                   return SizedBox();
@@ -176,6 +177,29 @@ class _DetailProjectViewState extends State<DetailProjectView> {
                                     SizedBox(height: 30,),
                                     Column(
                                       children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Image.asset("assets/inversion.png", width: 70, height: 50,),
+                                            RichText(
+                                                text: TextSpan(
+                                                    children: [ TextSpan(
+                                                        text: proyecto.detalleDeLaInversion.nInversionistas,
+                                                      style: TextStyle(color: Colors.black,
+                                                          fontWeight: FontWeight.bold,
+                                                          fontSize: 14),
+                                                    ),
+                                                      TextSpan(
+                                                          text: " inversionistas",
+                                                        style: TextStyle(color: Colors.black54,
+                                                            fontWeight: FontWeight.w300,
+                                                            fontSize: 14),
+                                                      )
+                                                    ]
+                                                )
+                                            )
+                                          ],
+                                        ),
                                         Container(
                                             width: Get.width * 1,
                                             child: Container(
@@ -245,6 +269,37 @@ class _DetailProjectViewState extends State<DetailProjectView> {
                                                 )
                                             ),
                                           ],
+                                        ),
+                                        SizedBox(height: 20,),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: SizedBox(
+                                              child:  ElevatedButton(
+                                                  style: ElevatedButton.styleFrom(
+                                                    onPrimary: Colors.white70,
+                                                    primary: Colors.black,
+                                                    minimumSize: Size(100, 50),
+                                                    padding: EdgeInsets.symmetric(horizontal: 20),
+                                                    shape: const RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.all(Radius.circular(25)),
+                                                    ),
+                                                  ),
+                                                  onPressed: () async {
+                                                    final url = proyecto.urlInversion == "https://" ? "www.arpiprinza.com" : proyecto.urlInversion;
+                                                    if (await canLaunch(url)) {
+                                                      await launch(url);
+                                                    } else {
+                                                      throw 'Could not launch $url';
+                                                    }
+                                                  },
+                                                  child: Text("QUIERO INVERTIR",
+                                                    style: TextStyle(color: Colors.amber,
+                                                        fontWeight: FontWeight.w700,
+                                                        fontSize: 19
+                                                    ),
+                                                  )
+                                              )
+                                          ),
                                         )
                                       ],
                                     ),
