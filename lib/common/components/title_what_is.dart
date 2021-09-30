@@ -19,7 +19,7 @@ class TitleWhatIs extends StatelessWidget {
           SizedBox(width: 8,),
           Text(title,
               style: TextStyle
-                (color: Colors.black, fontSize: 20,
+                (color: Colors.black, fontSize: 15,
                   fontWeight: FontWeight.bold)
           ),
           Icon(Icons.arrow_drop_down, size: 40,)

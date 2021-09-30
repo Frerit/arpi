@@ -320,5 +320,4 @@ class _DetailProjectViewState extends State<DetailProjectView> {
         )
     );
   }
-
 }

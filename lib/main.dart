@@ -26,6 +26,7 @@ class Arpi extends StatelessWidget {
         transitionDuration: Duration(microseconds: 35),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          fontFamily: 'Montserrat',
           //primarySwatch: Colors.blue,
           canvasColor: Colors.black87,
           visualDensity: VisualDensity.adaptivePlatformDensity,

@@ -55,7 +55,7 @@ class _ProjectViewState extends State<ProjectView> {
           ),
           Flexible(
               child: Padding(
-                  padding: EdgeInsets.only(top:5, left: 5, right: 5),
+                  padding: EdgeInsets.only(top:5,),
                   child: StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection("fl_content")

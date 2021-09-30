@@ -79,7 +79,7 @@ class ListProyectos extends StatelessWidget {
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(12),
                                       topRight: Radius.circular(12)),
-                                  child: Image.asset('assets/proyect1.jpg',
+                                  child: Image.asset('assets/imagen_CSS.jpg',
                                     fit: BoxFit.cover,),
                                 ),
                                 SizedBox(height: 10,),
@@ -217,7 +217,7 @@ class ListProyectos extends StatelessWidget {
                   ),
                   btnInvertir
                       ? Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(20),
                         child: SizedBox(
                         child:  ElevatedButton(
                             style: ElevatedButton.styleFrom(
