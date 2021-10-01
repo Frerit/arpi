@@ -3,7 +3,6 @@ import 'package:arpi/scenes/what_is/what_is_view.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../arpis/arpis_view.dart';
 import '../projects/projects_views.dart';
 
@@ -53,36 +52,33 @@ class _HomeViewState extends State<HomeView>  with TickerProviderStateMixin {
               ]
           )
       ),
-      child: Container(
-        width: Get.width,
-        child: Scaffold(
-          body: page(currentpage),
-          bottomNavigationBar: ConvexAppBar(
-              activeColor: Colors.amber,
-              color: Colors.grey,
-              backgroundColor: Colors.black87,
-              style: TabStyle.react,
-              items: [
-                TabItem(icon: currentpage == 0
-                    ? Image.asset("assets/proyectos_grande.png")
-                    : Image.asset("assets/proyectos_peq.png"), title: "Proyectos"),
-                TabItem(icon: currentpage == 1
-                    ? Image.asset("assets/arpis.png")
-                    : Image.asset("assets/arpis_peq.png"), title: "ARPIS"),
-                TabItem(icon: currentpage == 2
-                    ? Image.asset("assets/mi_perfil.png")
-                    : Image.asset("assets/inicia_sesion.png"), title: "Iniciar Sesión"),
-                TabItem(icon: currentpage == 3
-                    ? Image.asset("assets/que_es_grand.png")
-                    : Image.asset("assets/que_es_peq.png"), title: "¿Qué es?"),
-              ],
-              initialActiveIndex: 1,
-              onTap: (int i) {
-                setState(() {
-                  currentpage = i;
-                });
-              }
-          ),
+      child: Scaffold(
+        body: page(currentpage),
+        bottomNavigationBar: ConvexAppBar(
+            activeColor: Colors.amber,
+            color: Colors.grey,
+            backgroundColor: Colors.black87,
+            style: TabStyle.react,
+            items: [
+              TabItem(icon: currentpage == 0
+                  ? Image.asset("assets/proyectos_grande.png")
+                  : Image.asset("assets/proyectos_peq.png"), title: "Proyectos"),
+              TabItem(icon: currentpage == 1
+                  ? Image.asset("assets/arpis.png")
+                  : Image.asset("assets/arpis_peq.png"), title: "ARPIS"),
+              TabItem(icon: currentpage == 2
+                  ? Image.asset("assets/mi_perfil.png")
+                  : Image.asset("assets/inicia_sesion.png"), title: Get.width < 400 ? "Perfil" : "Iniciar Sesión"),
+              TabItem(icon: currentpage == 3
+                  ? Image.asset("assets/que_es_grand.png")
+                  : Image.asset("assets/que_es_peq.png"), title: "¿Qué es?"),
+            ],
+            initialActiveIndex: 1,
+            onTap: (int i) {
+              setState(() {
+                currentpage = i;
+              });
+            }
         ),
       ),
     );
