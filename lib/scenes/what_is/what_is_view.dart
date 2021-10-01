@@ -20,6 +20,7 @@ class _WhatisViewState extends State<WhatisView> {
         child: ListView(
           children: [
             Image(image: AssetImage("assets/que_es_image.png")),
+            SizedBox(height: 10,),
             StreamBuilder(
                 stream: FirebaseFirestore.instance.collection("fl_content").orderBy("posicion", ).snapshots(),
                 builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -32,13 +33,11 @@ class _WhatisViewState extends State<WhatisView> {
                         QueryDocumentSnapshot data = snapshot.data.docs[index];
                         if (data["_fl_meta_"]["schema"] == "queEs") {
                           return Container(
-                            padding: EdgeInsets.only(top: 5, left: 10, right: 10),
+                            padding: EdgeInsets.only( left: 10, right: 10),
                             child: Column(
                               children: [
                                 TitleWhatIs(title: data["titulo"],),
-                                Container(
-                                  child: Html(data: data["descripcion"]),
-                                ),
+                                Html(data: data["descripcion"]),
                               ],
                             ),
 
