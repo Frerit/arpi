@@ -68,7 +68,8 @@ class _HomeViewState extends State<HomeView>  with TickerProviderStateMixin {
                   : Image.asset("assets/arpis_peq.png"), title: "ARPIS"),
               TabItem(icon: currentpage == 2
                   ? Image.asset("assets/mi_perfil.png")
-                  : Image.asset("assets/inicia_sesion.png"), title: Get.width < 400 ? "Perfil" : "Iniciar Sesión"),
+                  : Image.asset("assets/inicia_sesion.png"),
+                  title: Get.width < 350 ? "Perfil" : "Iniciar Sesión"),
               TabItem(icon: currentpage == 3
                   ? Image.asset("assets/que_es_grand.png")
                   : Image.asset("assets/que_es_peq.png"), title: "¿Qué es?"),
