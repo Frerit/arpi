@@ -1,7 +1,7 @@
-import 'package:arpi/scenes/home/home_view.dart';
 import 'package:arpi/scenes/splash/splash_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:ots/ots.dart';
@@ -11,6 +11,10 @@ void main() async {
   await Firebase.initializeApp();
   await GetStorage.init();
   runApp(Arpi());
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp
+  ]);
 }
 
 class Arpi extends StatelessWidget {
