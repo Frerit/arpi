@@ -1,3 +1,4 @@
+import 'package:arpi/scenes/sign_in/session_started.dart';
 import 'package:arpi/scenes/sign_in/signin_view.dart';
 import 'package:arpi/scenes/what_is/what_is_view.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -22,7 +23,7 @@ page(items) {
     case 2:
       return SigninView();
     case 3:
-      return WhatisView();
+      return Session_StartedView(); //WhatisView();
     default:
       return ArpisView();
   }
