@@ -1,13 +1,17 @@
+import 'package:arpi/controllers/signin_controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SigninView extends StatefulWidget {
+  const SigninView({Key key}) : super(key: key);
 
   @override
   _SigninViewState createState() => _SigninViewState();
 }
 
 class _SigninViewState extends State<SigninView> {
+  final AuthController controller = AuthController.to;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,6 +57,7 @@ class _SigninViewState extends State<SigninView> {
 
             InkWell(
               onTap: () {},
+              splashColor: Colors.white,
               child: Container(
                 padding: EdgeInsets.all(8),
                 width: Get.width * 0.9,
@@ -82,7 +87,10 @@ class _SigninViewState extends State<SigninView> {
             SizedBox(height: 15,),
 
             InkWell(
-              onTap: () {},
+              onTap: ()  {
+                controller.signInWithGoogle();
+              },
+              splashColor: Colors.white,
               child: Container(
                 padding: EdgeInsets.all(8),
                 width: Get.width * 0.9,
@@ -113,6 +121,7 @@ class _SigninViewState extends State<SigninView> {
 
             InkWell(
               onTap: () {},
+              splashColor: Colors.white,
               child: Container(
                 padding: EdgeInsets.all(8),
                 width: Get.width * 0.9,

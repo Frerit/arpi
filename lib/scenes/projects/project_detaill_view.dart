@@ -64,7 +64,7 @@ class _DetailProjectViewState extends State<DetailProjectView> {
                       ),
                     ],
                   ),
-            ),
+                ),
                   IconButton(icon: Icon(Icons.arrow_back, color: Colors.white, size: 40), onPressed: () => Get.back())
                 ],
               ),

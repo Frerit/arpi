@@ -1,4 +1,5 @@
-import 'package:arpi/scenes/sign_in/session_started.dart';
+import 'package:arpi/controllers/signin_controllers/login_controller.dart';
+import 'package:arpi/scenes/profile/profile_view.dart';
 import 'package:arpi/scenes/sign_in/signin_view.dart';
 import 'package:arpi/scenes/what_is/what_is_view.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -12,30 +13,9 @@ class HomeView extends StatefulWidget {
   _HomeViewState createState() => _HomeViewState();
 }
 
-
-page(items) {
-  var currentpage = items;
-  switch (currentpage) {
-    case 0:
-      return ProjectView();
-    case 1:
-      return ArpisView();
-    case 2:
-      return SigninView();
-    case 3:
-      return Session_StartedView(); //WhatisView();
-    default:
-      return ArpisView();
-  }
-}
-
 class _HomeViewState extends State<HomeView>  with TickerProviderStateMixin {
   var currentpage;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  AuthController controller = AuthController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +34,7 @@ class _HomeViewState extends State<HomeView>  with TickerProviderStateMixin {
           )
       ),
       child: Scaffold(
-        body: page(currentpage),
+        body: Obx(() => page(currentpage, controller.isLogin.value) ),
         bottomNavigationBar: ConvexAppBar(
             activeColor: Colors.amber,
             color: Colors.grey,
@@ -84,5 +64,21 @@ class _HomeViewState extends State<HomeView>  with TickerProviderStateMixin {
         ),
       ),
     );
+  }
+}
+
+ page(items, bool isLoggin) {
+  var currentpage = items ;
+  switch (currentpage) {
+    case 0:
+      return ProjectView();
+    case 1:
+      return ArpisView();
+    case 2:
+      return isLoggin ? ProfileView() : SigninView();
+    case 3:
+      return WhatisView();
+    default:
+      return ArpisView();
   }
 }
