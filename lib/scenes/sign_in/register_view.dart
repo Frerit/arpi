@@ -45,27 +45,34 @@ class _RegisterViewState extends State<RegisterView> {
                 child: Column(
                   children: [Container(
                     child: TextFormField(
-                        validator: (value) => value.isEmpty ? 'Campo nombre obligatorio': null,
                         controller: controller.teFirstname,
-                      textAlign: TextAlign.left,
-                      keyboardType: TextInputType.text,
+                        textAlign: TextAlign.left,
+                        keyboardType: TextInputType.text,
                         cursorColor: Colors.black54,
-                      decoration: InputDecoration(
-                          fillColor: Colors.white38,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.black),
-                            borderRadius: BorderRadius.circular(12),
+                        validator: (value) {
+                          if (value.isEmpty ||
+                              !RegExp(r'`^[a-z A-Z]+$').hasMatch(value)) {
+                            return "Ingrese su apellido correcto";
+                          } else {
+                            return null;
+                          }
+                        },
+                        decoration: InputDecoration(
+                            fillColor: Colors.white38,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.black),
+                              borderRadius: BorderRadius.circular(12),
                           ),
-                          focusColor: Colors.white70,
-                        labelText: "Nombre",
-                        labelStyle: TextStyle(fontSize: 15,
+                            focusColor: Colors.white70,
+                            labelText: "Nombre",
+                            labelStyle: TextStyle(fontSize: 15,
                             color: Colors.black54),
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
-                            style: BorderStyle.none,
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide(
+                                  style: BorderStyle.none,
                           )
                         )
                       )
@@ -74,11 +81,17 @@ class _RegisterViewState extends State<RegisterView> {
                     SizedBox(height: 5,),
                     Container(
                       child: TextFormField(
-                          validator: (value) => value.isEmpty ? 'Campo apellido obligatorio' : null,
                           controller: controller.teLastname,
                           textAlign: TextAlign.left,
                           keyboardType: TextInputType.text,
                           cursorColor: Colors.black54,
+                          validator: (value){
+                            if(value.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)){
+                              return "Ingrese su apellido correcto";
+                            }else{
+                              return null;
+                            }
+                          },
                           decoration: InputDecoration(
                               fillColor: Colors.white38,
                               focusedBorder: OutlineInputBorder(
@@ -110,7 +123,14 @@ class _RegisterViewState extends State<RegisterView> {
                     SizedBox(height: 10,),
                     Container(
                       child: TextFormField(
-                          validator: (value) => value.isEmpty ? 'Campo obligatorio' : null,
+                              /*validator: (value) {
+                                if (value.isEmpty || !RegExp(r'^[+]*[(]{0,1}[0,9]{1,4}[-\s\./0-9]+$')
+                                    .hasMatch(value)) {
+                                  return "Ingrese un email correecto";
+                                } else {
+                                  return null;
+                                }
+                              },*/
                           controller: controller.teBirthday,
                           textAlign: TextAlign.left,
                           onTap: () async {
@@ -149,7 +169,14 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                     SizedBox(height: 15,),
                     Container(
-                      child: TextFormField(validator: (value) => value.isEmpty ? 'Email invalido': null,
+                      child: TextFormField(
+                          validator: (value) {
+                            if (value.isEmpty || !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}').hasMatch(value)) {
+                              return "Ingrese su apellido correcto";
+                            } else {
+                              return null;
+                            }
+                          },
                           controller: controller.teEmail,
                           textAlign: TextAlign.left,
                           keyboardType: TextInputType.datetime,

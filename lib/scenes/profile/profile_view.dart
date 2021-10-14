@@ -1,5 +1,7 @@
 import 'package:arpi/common/components/title_what_is.dart';
 import 'package:arpi/controllers/profile_controller/profile_controllers.dart';
+import 'package:arpi/scenes/my_data/my_data_view.dart';
+import 'package:arpi/scenes/myarpis/my_arpis.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -64,26 +66,34 @@ class _ProfileViewState extends State<ProfileView> {
                         padding: EdgeInsets.only(left: 20, top: 5),
                         child: Column(
                           children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset("assets/inicia_sesion.png", width: 25, height: 25, color: Colors.black54,),
-                                SizedBox(width: 10,),
-                                Text("Mis Datos", style: TextStyle(fontSize: 17,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold,))
-                              ],
+                            InkWell(
+                              onTap: () => Navigator.push(
+                                  context, MaterialPageRoute(builder: (context) => MydataView())),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset("assets/inicia_sesion.png", width: 25, height: 25, color: Colors.black54,),
+                                  SizedBox(width: 10,),
+                                  Text("Mis Datos", style: TextStyle(fontSize: 20,
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,))
+                                ],
+                              ),
                             ),
                             SizedBox(height: 25,),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset("assets/arpis_peq.png", width: 25, height: 25, color: Colors.black54,),
-                                SizedBox(width: 10,),
-                                Text("Mis ARPIs", style: TextStyle(fontSize: 17,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold,))
-                              ],
+                            InkWell(
+                              onTap: () => Navigator.push(
+                                  context, MaterialPageRoute(builder: (context) => MyArpisView())),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Image.asset("assets/arpis_peq.png", width: 25, height: 25, color: Colors.black54,),
+                                    SizedBox(width: 10,),
+                                    Text("Mis ARPIs", style: TextStyle(fontSize: 20,
+                                      color: Colors.black54,
+                                      fontWeight: FontWeight.bold,))
+                                  ],
+                                ),
                             ),
                             SizedBox(height: 25,),
                             InkWell(
@@ -93,7 +103,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 children: [
                                   Icon(Icons.logout, color: Colors.black54,),
                                   SizedBox(width: 10,),
-                                  Text("Cerrar sesión", style: TextStyle(fontSize: 17,
+                                  Text("Cerrar sesión", style: TextStyle(fontSize: 20,
                                     color: Colors.black54,
                                     fontWeight: FontWeight.bold,))
                                 ],
